@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Challenge 1 – 3D Racing Prototype</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.164/build/three.module.js",
+          "three/addons/controls/OrbitControls.js": "https://cdn.jsdelivr.net/npm/three@0.164/examples/jsm/controls/OrbitControls.js",
+          "cannon-es": "https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/dist/cannon-es.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="welcomeScreen">
+      <h1>🏁 Welcome to 3D Racing Prototype 🏁</h1>
+      <div id="mainMenu">
+        <p>Press SPACE to start</p>
+        <button id="controlsBtn" class="menu-btn">📋 Controls</button>
+        <button id="settingsBtn" class="menu-btn">⚙️ Settings</button>
+      </div>
+    </div>
+
+    <div id="controlsModal" class="modal">
+      <div class="modal-content">
+        <h2>Controls</h2>
+        <p><strong>W / ↑</strong> - Accelerate</p>
+        <p><strong>S / ↓</strong> - Brake/Reverse</p>
+        <p><strong>A / ←</strong> - Steer Left</p>
+        <p><strong>D / →</strong> - Steer Right</p>
+        <p><strong>C</strong> - Change Camera View</p>
+        <p><strong>ESC</strong> - Main Menu</p>
+        <button id="closeControlsBtn" class="modal-btn">Back</button>
+      </div>
+    </div>
+
+    <div id="settingsModal" class="modal">
+      <div class="modal-content">
+        <h2>Settings</h2>
+        <label>
+          <input type="checkbox" id="soundToggle" checked />
+          Sound Effects
+        </label>
+        <label>
+          <input type="checkbox" id="musicToggle" checked />
+          Background Music
+        </label>
+        <button id="closeSettingsBtn" class="modal-btn">Back</button>
+      </div>
+    </div>
+
+    <div id="overlay">
+      <div id="hud">
+        <div><strong>Speed:</strong> <span id="speedValue">0</span> km/h</div>
+        <div><strong>Drift:</strong> <span id="driftValue">0</span>%</div>
+        <div>
+          <strong>Lap:</strong> <span id="lapValue">1</span>/<span id="lapMax"
+            >3</span
+          >
+        </div>
+        <div><strong>Timer:</strong> <span id="timerValue">0.0</span>s</div>
+        <div id="cameraIndicator">📷 Chase Cam</div>
+      </div>
+      <div id="soundToggleBtn" class="sound-btn">🔊</div>
+    </div>
+
+    <div id="result">
+      <h2 id="statusMessage">Congrats!</h2>
+      <p>Racing Completion time: <span id="finalTime">0.0</span>s</p>
+      <p>Press SPACE to race again</p>
+      <button id="menuBtn" class="menu-btn">Back to Menu</button>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
