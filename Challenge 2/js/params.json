@@ -1,0 +1,26 @@
+{
+  "objects": [
+    { "name": "Arm Chair 01", "path": "armchair01", "id": 0 },
+    { "name": "Arm Chair 02", "path": "armchair02", "id": 1 },
+    { "name": "Arm Chair 03", "path": "armchair03", "id": 2 },
+    { "name": "Chair 01", "path": "chair01", "id": 12 },
+    { "name": "Table 03", "path": "table03", "id": 33 },
+    { "name": "Table 04", "path": "table04", "id": 34 },
+    { "name": "TV Stand 02", "path": "tv_stand02", "id": 37 },
+    { "name": "TV Stand 03", "path": "tv_stand03", "id": 38 },
+    { "name": "Wall Piece", "path": "wallpiece", "id": 41 },
+    { "name": "Floor Piece", "path": "floorpiece", "id": 42 }
+  ],
+
+  "categories": [
+    {
+      "id": 0,
+      "name": "Living Room",
+      "thumb": "./assets/images/furniture/armchair02.jpg",
+      "objects": [
+        0, 1, 2, 10, 11, 12, 23, 14, 16, 17, 18, 19, 20, 28, 31, 32, 33, 34, 36,
+        37, 38
+      ]
+    }
+  ]
+}

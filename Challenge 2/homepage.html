@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+  <head>
+    <title>3D Room Designer - Select Room Size</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" media="all" />
+  </head>
+
+  <body class="homepage-body">
+    <div class="homepage-container">
+      <div class="homepage-header">
+        <h1>3D Living Room Designer</h1>
+        <p class="subtitle">Choose your room size to get started</p>
+      </div>
+
+      <div class="room-selection-grid">
+        <div class="room-option" data-room-size="small">
+          <div class="room-preview small-room">
+            <div class="room-visual"></div>
+          </div>
+          <h2>Small Room</h2>
+          <p class="room-description">Perfect for cozy spaces<br>4m × 4m</p>
+          <button class="select-room-btn">Select</button>
+        </div>
+
+        <div class="room-option" data-room-size="medium">
+          <div class="room-preview medium-room">
+            <div class="room-visual"></div>
+          </div>
+          <h2>Medium Room</h2>
+          <p class="room-description">Standard living room size<br>6m × 6m</p>
+          <button class="select-room-btn">Select</button>
+        </div>
+
+        <div class="room-option" data-room-size="large">
+          <div class="room-preview large-room">
+            <div class="room-visual"></div>
+          </div>
+          <h2>Large Room</h2>
+          <p class="room-description">Spacious area for design<br>8m × 8m</p>
+          <button class="select-room-btn">Select</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const roomOptions = document.querySelectorAll('.room-option');
+        
+        roomOptions.forEach(option => {
+          const selectBtn = option.querySelector('.select-room-btn');
+          
+          selectBtn.addEventListener('click', function() {
+            const roomSize = option.getAttribute('data-room-size');
+            // Store room size in localStorage
+            localStorage.setItem('selectedRoomSize', roomSize);
+            // Redirect to main app
+            window.location.href = 'index.html';
+          });
+
+          // Add hover effect
+          option.addEventListener('mouseenter', function() {
+            option.classList.add('hovered');
+          });
+
+          option.addEventListener('mouseleave', function() {
+            option.classList.remove('hovered');
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
+
